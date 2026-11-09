@@ -1,0 +1,319 @@
+
+/* =========================
+   1. Global Settings
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2457c5;
+    --primary-dark: #173f98;
+    --text: #182235;
+    --muted: #667085;
+    --surface: #ffffff;
+    --page: #f5f7fb;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background: var(--page);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+}
+
+
+/* =========================
+   2. Navigation
+========================= */
+
+.navbar-brand {
+    color: var(--primary) !important;
+    font-weight: 750;
+    letter-spacing: .02em;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   3. Hero Section
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 360px;
+    max-height: 470px;
+    padding: 0;
+    overflow: hidden;
+    background: #1d2e4d;
+}
+
+.hero::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(
+        90deg,
+        rgba(8, 22, 48, .78),
+        rgba(8, 22, 48, .12)
+    );
+}
+
+.hero > img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: max(7%, calc((100% - 1140px) / 2));
+    width: min(560px, 82%);
+    color: white;
+    transform: translateY(-50%);
+}
+
+.hero-content h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 750;
+}
+
+.eyebrow {
+    margin-bottom: .5rem;
+    color: var(--primary);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.hero-content .eyebrow {
+    color: #d9e5ff;
+}
+
+
+/* =========================
+   4. Sections
+========================= */
+
+.section-space {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+    margin-bottom: .5rem;
+    font-weight: 750;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+
+/* =========================
+   5. Flight Cards
+========================= */
+
+.flight-card {
+    height: 100%;
+    overflow: hidden;
+    border: 0;
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: 0 8px 28px rgba(25, 42, 70, .08);
+    transition: transform .2s ease,
+                box-shadow .2s ease;
+}
+
+.flight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(25, 42, 70, .14);
+}
+
+.flight-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.flight-card .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.flight-route {
+    margin-bottom: .75rem;
+    font-size: 1.15rem;
+    font-weight: 750;
+}
+
+.flight-meta {
+    margin-bottom: .35rem;
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+.flight-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+}
+
+.flight-price {
+    color: var(--primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+
+/* =========================
+   6. Buttons
+========================= */
+
+.btn-primary {
+    border-color: var(--primary);
+    background: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   7. Booking Summary
+========================= */
+
+.booking-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #e5eaf3;
+    border-radius: 1rem;
+    background: var(--surface);
+}
+
+.booking-summary p,
+.summary-price span {
+    color: var(--muted);
+}
+
+.summary-price {
+    display: grid;
+    text-align: right;
+}
+
+.summary-price strong {
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+
+
+/* =========================
+   8. Booking Form
+========================= */
+
+.booking-form {
+    max-width: 680px;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 1rem;
+    background: var(--surface);
+    box-shadow: 0 8px 28px rgba(25, 42, 70, .08);
+}
+
+.form-message {
+    font-weight: 600;
+}
+
+.form-message.success {
+    color: #147a43;
+}
+
+.form-message.error {
+    color: #b42318;
+}
+
+
+/* =========================
+   9. Footer
+========================= */
+
+.site-footer {
+    margin-top: 4rem;
+    padding: 1.5rem 1rem;
+    color: white;
+    background: var(--primary);
+    text-align: center;
+}
+
+
+/* =========================
+   10. Responsive Design
+========================= */
+
+@media (max-width: 575.98px) {
+
+    .hero,
+    .hero > img {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .section-space {
+        padding-top: 2.5rem;
+    }
+
+    .booking-summary {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .summary-price {
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   11. Accessibility
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
